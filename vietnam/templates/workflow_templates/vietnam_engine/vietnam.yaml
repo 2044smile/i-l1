@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: vietnam-travel
+spec:
+  entrypoint: vietnam
+  templates:
+  - name: echo
+    inputs:
+      parameters:
+      - name: message
+    container:
+      image: alpine:3.7
+      command: [echo, ""]
+  - name: failed
+    container:
+      image: alpine:3.6
+      commend: [sh, -c]
+      args: ["echo \"Welcome to Vietnam\""]
+  - name: vietnam
+    dag:
+      tasks:
+      - name: Hanoi
+        template: echo
+        arguments:
+          parameters: [{name: message, value: Hanoi}]
+      - name: HaLongBay
+        dependencies: [Hanoi]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: HaLongBay}]
+      - name: USA
+        dependencies: [Hanoi]
+        template: echo
+        when: "{{`{{workflow.status}}`}} == Failed"
+        arguments:
+          parameters: [{name: message, value: USA}]
+      - name: DaNang
+        dependencies: [HaLongBay]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: DaNang}]
+      - name: NhaTrang
+        dependencies: [DaNang]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: NhaTrang}]
+      - name: Korea
+        dependencies: [NhaTrang]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: Korea}]

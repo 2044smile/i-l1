@@ -1,5 +1,7 @@
 # i-l1
 
+# infra
+
 Pod 로그 및 status 확인<br/>
 EKS cluster 내에 구성된 pod 내부 로그 및 status 확인<br/>
 <br/>

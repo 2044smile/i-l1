@@ -12,11 +12,6 @@ spec:
     container:
       image: alpine:3.7
       command: [echo, ""]
-  - name: failed
-    container:
-      image: alpine:3.6
-      commend: [sh, -c]
-      args: ["echo \"Welcome to Vietnam\""]
   - name: vietnam
     dag:
       tasks:

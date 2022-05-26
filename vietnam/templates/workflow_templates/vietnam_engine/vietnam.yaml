@@ -12,6 +12,11 @@ spec:
     container:
       image: alpine:3.7
       command: [echo, ""]
+  - name: exit-handler
+    container:
+      image: alpine:latest
+      command: [sh, -c]
+      args: ["echo failure; exit 1"]
   - name: vietnam
     dag:
       tasks:

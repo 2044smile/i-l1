@@ -24,3 +24,7 @@ Argo workflow 구성 및 배포, 수행<br/>
 done
 
 # 추가 과제 발생
+
+1. configmap, secret 실제로 환경변수로 적용됐는지 팟에서 확인 (ex. Echo $환경변수) (done)
+2. argo가 PROTO-INFERENCE-NG에 속한 node에만 뜨도록 설정
+3. backend 테스트에서 만든 Django project를 helm chart로 띄우기

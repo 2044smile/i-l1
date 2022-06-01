@@ -1,6 +1,6 @@
 # i-l1
 
-# infra
+# infra(Kubernetes, EKS, Argo Workflow, Helm)
 
 - low - i-l1 - Pod 로그 및 status 확인, EKS cluster 내에 구성된 pod 내부 로그 및 status 확인 (done)<br/>
 - low - i-l2 - Argo workflow 수행, 기구성된 Argo workflow manager 내 특정 workflow 수행 및 status, 로그 확인 (done)<br/>

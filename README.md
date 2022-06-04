@@ -18,3 +18,4 @@
 # 일지 (2022-06-03)
 
 1. docker Repository <none>, Tag <none> | docker tag 'docker image ID 4자리' REPOSITORY:TAG
+2. Docker -> ECR -> Helm 

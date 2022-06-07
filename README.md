@@ -27,6 +27,9 @@
   * helm install --debug <name> .charts --namespace <namespace>
     * --dry-run 을 사용하면 코드를 쉽게 테스트할 수 있지만, 쿠버네티스가 당신이 만든 템플릿을 받아들이는지 확신할 수 없다.
   * helm _helpers.tpl 템플릿 정의 할 때 참고하는 값
-
+* Kubernetes patch deployments/<deployment> -p '{"A":"a"}' 와 같이 값을 설정할 수 있다.
+* Kubernetes(Docker) Pull Error 시 image: 의 name을 체크해봐야한다.
+* "A-secrets" not found 의 경우 envFrom, secretRef를 사용하여 시크릿이 설정되어 있다는 뜻이다.
+  * kubectl create secret generic A-secrets 로 생성해주면 된다.
   
   

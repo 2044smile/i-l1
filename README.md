@@ -11,14 +11,14 @@
 
 # 추가 과제 발생
 
-1. configmap, secret 실제로 환경변수로 적용됐는지 팟에서 확인 (ex. Echo $환경변수) (done)
-2. argo가 PROTO-INFERENCE-NG에 속한 node에만 뜨도록 설정 (done)
-3. backend 테스트에서 만든 Django project를 helm chart로 띄우기
+* configmap, secret 실제로 환경변수로 적용됐는지 팟에서 확인 (ex. Echo $환경변수) (done)
+* argo가 PROTO-INFERENCE-NG에 속한 node에만 뜨도록 설정 (done)
+* backend 테스트에서 만든 Django project를 helm chart로 띄우기
 
 # 일지 (2022-06-03)
 
-1. docker Repository <none>, Tag <none> | docker tag 'docker image ID 4자리' REPOSITORY:TAG
-2. Docker -> ECR -> Helm 
+* docker Repository <none>, Tag <none> | docker tag 'docker image ID 4자리' REPOSITORY:TAG
+* Docker -> ECR -> Helm 
 
 # 일지 (2022-06-07)
 

@@ -33,5 +33,13 @@
 * Kubernetes(Docker) Pull Error 시 image: 의 name을 체크해봐야한다.
 * "A-secrets" not found 의 경우 envFrom, secretRef를 사용하여 시크릿이 설정되어 있다는 뜻이다.
   * kubectl create secret generic A-secrets 로 생성해주면 된다.
-  
+* AWS profile 설정
+  * aws configure --profile $PROFILE_NAME cli 에서 위 명령어 실행 후 각자 access key 등 입력
+* EKS 설정
+  * aws eks --region $REGION update-kubeconfig --name $CLUSTER_NAME --profile $PROFILE_NAME
+* EKS 설정 확인
+  * kubectl config current-context ex) arn:aws:eks:ap-northeast-2:************:cluster/A
+* 최종 확인
+  * kubectl config set-context --current --namespace=A
+  * kubectl get pod
   

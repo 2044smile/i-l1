@@ -42,4 +42,6 @@
 * 최종 확인
   * kubectl config set-context --current --namespace=A
   * kubectl get pod
-  
+* Kubernetes secrets 
+  * base64 Encoded **POD**(TOKEN=6rCA64KY64ukCg==) created secrets🔽
+  * base64 Decoded **Django**(TOKEN=가나다)

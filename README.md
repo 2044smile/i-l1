@@ -43,5 +43,5 @@
   * kubectl config set-context --current --namespace=A
   * kubectl get pod
 * Kubernetes secrets 
-  * base64 Encoded **POD**(TOKEN=6rCA64KY64ukCg==) created secrets🔽 - 정리하면 secrets 에서는 Decoded 된 값을 못보는 반면
+  * base64 Encoded **POD**(TOKEN=6rCA64KY64ukCg==) created secrets - 정리하면 secrets 에서는 Decoded 된 값을 못보는 반면
   * base64 Decoded **Django**(TOKEN=가나다) - Pod 안에서는 Decoded 된 값을 볼 수 있다.

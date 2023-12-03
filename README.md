@@ -27,7 +27,7 @@
   * helm install --debug <name> .charts --namespace <namespace> EX) node-group=A, 
     * '{"spec": {"template": {"spec": {"nodeSelector": {"Node-Selectors": "A"}}}}}'
     * '{"spec": {"template": {"Node-Selector": "node-group=A"}}}'
-    * --dry-run 을 사용하면 코드를 쉽게 테스트할 수 있지만, Kubernetes가 만든 템플릿을 받아들이는지 확신할 수 없다.
+    * --dry-run 을 사용하면 코드를 쉽게 테스트할 수 있지만, Kubernetes가 만든 템플릿을 받아들이는지 확신할 수 없다
   * helm _helpers.tpl 템플릿 정의 할 때 참고하는 값
 * Kubernetes patch deployments/<deployment> -p '{"A":"a"}' 와 같이 값을 설정할 수 있다.
 * Kubernetes(Docker) Pull Error 시 image: 의 name을 체크해봐야한다.

@@ -45,3 +45,17 @@
 * Kubernetes secrets 
   * base64 Encoded **POD**(TOKEN=6rCA64KY64ukCg==) created secrets - 정리하면 secrets 에서는 Decoded 된 값을 못보는 반면
   * base64 Decoded **Django**(TOKEN=가나다) - Pod 안에서는 Decoded 된 값을 볼 수 있다.
+
+# Helm
+
+* environments 폴더는 모든 환경 관련 파일을 저장하는 곳이다. [configMap, Secret, values]
+  * values
+    * helm upgrade dodo-helm-tutorial -f environments/values.dev.yaml .
+    * helm upgrade dodo-helm-tutorial -f environments/values.prod.yaml .
+  * Secret
+    * Secret 파일은 git 에 체크인[add .helmignore되지 않으며 CI/CD 파이프라인에서만 사용할 수 있다.
+    * Secret 파일 내의 각 키 값은 **base64** 로 인코딩되어야 한다.
+
+## Reference 
+
+* https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html

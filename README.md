@@ -48,13 +48,22 @@
 
 # Helm
 
-* environments 폴더는 모든 환경 관련 파일을 저장하는 곳이다. [configMap, Secret, values]
-  * values
-    * helm upgrade dodo-helm-tutorial -f environments/values.dev.yaml .
-    * helm upgrade dodo-helm-tutorial -f environments/values.prod.yaml .
-  * Secret
-    * Secret 파일은 git 에 체크인[add .helmignore되지 않으며 CI/CD 파이프라인에서만 사용할 수 있다.
-    * Secret 파일 내의 각 키 값은 **base64** 로 인코딩되어야 한다.
+### environments 폴더는 모든 환경 관련 파일을 저장하는 곳이다. [configMap, Secret, values]
+* values
+  * helm upgrade dodo-helm-tutorial -f environments/values.dev.yaml .
+  * helm upgrade dodo-helm-tutorial -f environments/values.prod.yaml .
+* Secret
+  * Secret 파일은 git 에 체크인[add .helmignore되지 않으며 CI/CD 파이프라인에서만 사용할 수 있다.
+  * Secret 파일 내의 각 키 값은 **base64** 로 인코딩되어야 한다.
+
+### 조건문과 반복문
+
+* if
+  ```yaml
+  {{ if or (eq .Values.env "prod") }}  # dev(-f values.dev.yaml) 에서는 아래 SENTRY__DSN 의 값을 볼 수 없다
+  SENTRY__DSN: https://sentry.io/
+  {{ end }}
+  ```
 
 ## Reference 
 

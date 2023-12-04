@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/component: web
     app.kubernetes.io/part-of: web-prod
 spec:
-  replicas: 2
+  replicas: {{ .Values.web.replicas }}
   selector:
     matchLabels:
       app.kubernetes.io/name: dodo-helm-tutorial-web

@@ -65,6 +65,13 @@
   {{ end }}
   ```
 
+* range는 list와 tutple 외에도 map, dict를 반복하는데 사용할 수 있습니다.
+  ```yaml
+  {{ range $index, $origin := .Values.web.crossOrigins }}
+  WEB__CROSS_ORIGIN__{{ $index }}: {{ $origin }}
+  {{ end }}
+  ```
+
 ## Reference 
 
 * https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html

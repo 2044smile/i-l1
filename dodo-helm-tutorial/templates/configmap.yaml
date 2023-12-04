@@ -6,7 +6,6 @@ data:
   {{ if or (eq .Values.env "prod") (eq .Values.env "dev") }}
   SENTRY__DSN: https://sentry.io/
   {{ end }}
-  WEB__CROSS_ORIGIN__0: http://localhost:8080
-  WEB__CROSS_ORIGIN__1: http://127.0.0.1:8080
-  WEB__CROSS_ORIGIN__2: http://localhost:8081
-  WEB__CROSS_ORIGIN__3: http://127.0.0.1:8081
+  {{ range $index, $origin := .Values.web.crossOrigins }}
+  WEB__CROSS_ORIGIN__{{ $index }}: {{ $origin }}
+  {{ end }}

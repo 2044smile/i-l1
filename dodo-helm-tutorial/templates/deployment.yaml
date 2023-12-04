@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dodo-helm-tutorial-web
+  name: {{ .Values.web.env }}-dodo-helm-tutorial-web
   labels:
     app.kubernetes.io/name: dodo-helm-tutorial-web
     app.kubernetes.io/component: web

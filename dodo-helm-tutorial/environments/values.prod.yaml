@@ -1,3 +1,4 @@
+env: prod
+
 web:
-  env: prod
   replicas: 3

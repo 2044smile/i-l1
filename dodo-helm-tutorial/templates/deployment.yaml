@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.web.env }}-dodo-helm-tutorial-web  # 요건 테스트 용도이고, 실무애서는 분명 노드로 환경을 구분 할 것임.
+  name: {{ .Values.env }}-dodo-helm-tutorial-web  # 요건 테스트 용도이고, 실무애서는 분명 노드로 환경을 구분 할 것임.
   labels:
     app.kubernetes.io/name: dodo-helm-tutorial-web
     app.kubernetes.io/component: web

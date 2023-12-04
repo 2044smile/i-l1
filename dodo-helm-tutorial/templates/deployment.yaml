@@ -33,4 +33,4 @@ spec:
           limits:
             memory: "384Mi"
             cpu: "250m"
-        # imagePullPolicy: Never
+        # imagePullPolicy: Never  로컬 이미지가 사용된다. 난 외부 이미지를 사용할 것이기에 주석처리 했음.

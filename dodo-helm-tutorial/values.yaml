@@ -98,4 +98,4 @@ tolerations: []
 affinity: {}
 
 web:
-  replicas: 3
+  replicas: 2

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: COnfigMap
+metadata:
+  name: dodo-helm-tutorial-config
+data:
+  SENTRY__DSN: https://sentry.io/
+  WEB__CROSS_ORIGIN__0: http://localhost:8080
+  WEB__CROSS_ORIGIN__1: http://127.0.0.1:8080
+  WEB__CROSS_ORIGIN__2: http://localhost:8081
+  WEB__CROSS_ORIGIN__3: http://127.0.0.1:8081

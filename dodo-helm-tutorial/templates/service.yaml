@@ -1,15 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "dodo-helm-tutorial.fullname" . }}
+  name: dodo-helm-tutorial-web
   labels:
-    {{- include "dodo-helm-tutorial.labels" . | nindent 4 }}
+    app.kubernetes.io/name: dodo-helm-tutorial-web
+    app.kubernetes.io/component: web
+    app.kubernetes.io/part-of: web-prod
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
   selector:
-    {{- include "dodo-helm-tutorial.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/name: dodo-helm-tutorial-web
+    app.kubernetes.io/version: 1.0.0
+    app.kubernetes.io/component: web
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: LoadBalancer

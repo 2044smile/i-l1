@@ -81,3 +81,16 @@
 * 서비스가 처음 배포될 때 돌아야 하는 **데이터베이스 마이그레이션 Job** 이었습니다.
 * Helm 에서는 hooks 를 이용하여 릴리즈 생명주기에 개입 할 수 있습니다.
 * install, delete, upgrade, rollback 각각 실행 전후로 hook 지정이 가능합니다.
+
+```yaml
+# templates/post-install.job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migration-job
+  annotations:
+    "helm.sh/hook": post-install  # 어떤 시점에 hook을 동작시킬 지 지정할 수 있으며 ',' 를 통해 여러 시점을 지정 할 수 있습니다.
+    "helm.sh/hook-weight": "5"  # 실행 순서 결정을 위하여 정수를 통해 중요도를 지정 할 수 있으며 문자열로 정의해야 합니다.
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded  # hook을 언제 삭제할지 설정할 수 있으며 지정하지 않을 경우 다음 hook 이 생성될 때 사라집니다.
+spec:
+```

@@ -72,10 +72,6 @@
   {{ end }}
   ```
 
-## Reference 
-
-* https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html
-
 # Chart hooks
 
 * 서비스가 처음 배포될 때 돌아야 하는 **데이터베이스 마이그레이션 Job** 이었습니다.
@@ -94,3 +90,11 @@ metadata:
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded  # hook을 언제 삭제할지 설정할 수 있으며 지정하지 않을 경우 다음 hook 이 생성될 때 사라집니다.
 spec:
 ```
+
+# plugin
+
+* helm diff 플러그인을 사용하면 CI 단계에서 배포 전후의 k8s 리소스에 어떤 변화가 일어나는지 미리 체크하는 목적으로 유용하게 활용
+
+### Reference 
+
+* https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html

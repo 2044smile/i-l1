@@ -75,3 +75,9 @@
 ## Reference 
 
 * https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html
+
+# Chart hooks
+
+* 서비스가 처음 배포될 때 돌아야 하는 **데이터베이스 마이그레이션 Job** 이었습니다.
+* Helm 에서는 hooks 를 이용하여 릴리즈 생명주기에 개입 할 수 있습니다.
+* install, delete, upgrade, rollback 각각 실행 전후로 hook 지정이 가능합니다.

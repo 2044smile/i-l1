@@ -100,7 +100,7 @@ spec:
 * kubectl get rs: replicas 정보 확인
 * kubectl rollout undo deploy nginx-deployment: 배포 롤백하기
 
-## 배포 전략
+## 배포[Deployment] 전략
 
 * 기본적으로 RollingUpdate 방식으로 배포를 하지만, Blue/Green 는 Istio, Nginx 또는 Argo 와 같은 도구를 사용하여 Blue/Green 배포를 많이 진행한다.
 

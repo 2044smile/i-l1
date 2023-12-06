@@ -154,6 +154,17 @@ spec:
   * 복잡한 트래픽 라우팅이 가능하다는 점에서 AWS 등에서 제공하는 API Gateway나 Application LoadBalancer과 유사한 면이 있다.
   * Ingress Controller 로 사용할 수 있다.
 
+## Ingress
+
+* Ingress 를 이용하면 노출된 서비스들을 HTTP/HTTPS 기반으로 더욱 더 정교하게 라우팅 할 수 있다.
+* Kubernetes 관리자는 Nginx, Traefik, Kong, AWS ELB 와 같은 로드밸랜서를 Ingree 로 사용 할 수 있다.
+* MSA 에서 Gateway 역할을 대신 해주는 녀석이다.
+
+1. 클라이언트의 요청을 받아서 URL, HOST 이름 또는 기타 메타데이터를 기반으로 다른 서비스로 라우팅한다. 예를들어 /music 로 시작하는 URL은 music 서비스로, /photo 로 시작하는 URL photo 서비스로 라우팅 할 수 있다. HOST 이름의 경우 HTTP 헤더의 HOST 필드의 값이 HOST: user.example.com 이라면 user 서비스로 HOST: payment.example.com 이라면 payment 서비스로 라우팅 할 수 있다.
+2. 트래픽에 대한 SSL 인증서를 처리한다.
+3. 들어오는 트래픽에 대한 부하 분산을 제공한다.
+4. 속도 제한(rate limiting), 사용자 인증과 같은 다양한 기능들을 제공한다.
+
 ### Reference 
 
 * https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html

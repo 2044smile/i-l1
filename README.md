@@ -95,11 +95,26 @@ spec:
 
 * helm diff 플러그인을 사용하면 CI 단계에서 배포 전후의 k8s 리소스에 어떤 변화가 일어나는지 미리 체크하는 목적으로 유용하게 활용
 
-### Reference 
-
-* https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html
-
 # Kubernetes
 
 * kubectl get rs: replicas 정보 확인
 * kubectl rollout undo deploy nginx-deployment: 배포 롤백하기
+
+## 배포 전략
+
+1. Recreate Deployment
+  * 현재 실행 중인 pod 인스턴스를 종료하고 새 버전으로 동시에 새로 실행한다. 
+  * 애플리케이션 중단을 막을 수 없으며, 복구(롤백) 프로세스를 돌리는데에도 시간지연이 발생한다.
+  * 간단하고 빠르고 저렴하다는 장점이 있다. 하지만 가장 위험한 배포전략으로 모범 사례에 속하지 않는다. 
+  * 서비스가 비즈니스, 미션, 수익에 중요하지 않는 경우, 근무 시간외에 배포해도 괜찮은 경우, 개발이나 스테이징 환경 등에 주로 사용한다.
+
+2. **Rolling Update Deployment [무중단 배포]**
+  * 롤링 업데이트는 실행 중인 애플리케이션 인스턴스를 순차적으로 새 릴리즈로 업데이트하는 배포 전략이다.
+  * 롤릴 업데이트는 롤백이 비교적 간단하며 Recreate Deployment 보다 더 안전하다는 장점이 있다. 
+  * 하지만 릴리즈 업데이트가 완료되기 전까지, 서로 다른 버전의 애플리케이션이 실행될 수 있으므로 여기에서 발생할 수 있는 문제점을 해결 할 수 있어야 한다.
+  * 업데이트 할 때, 각 애플리케이션이 성공적으로 배포됐는지를 확인하기 때문에 배포에 시간이 걸릴 수 있다.
+
+### Reference 
+
+* https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html
+* https://www.joinc.co.kr/w/kubernetes_minikube_index

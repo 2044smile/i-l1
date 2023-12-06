@@ -98,3 +98,8 @@ spec:
 ### Reference 
 
 * https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html
+
+# Kubernetes
+
+* kubectl get rs: replicas 정보 확인
+* kubectl rollout undo deploy nginx-deployment: 배포 롤백하기

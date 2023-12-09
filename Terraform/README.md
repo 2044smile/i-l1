@@ -40,6 +40,7 @@
 ## 테스트
 
 ```markdown
+# main.tf
 resource "fakewebservices_server" "servers" {
   count = 2 --> 1  # successed
 

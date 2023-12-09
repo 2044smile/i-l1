@@ -37,6 +37,19 @@
    1. 실제로 작성한 코드로 인프라를 생성하는 명령어
    2. 실제 인프라에 영향을 끼치는 명령어이므로 주의깊게 실행을 해야한다.
 
+## 테스트
+
+```markdown
+resource "fakewebservices_server" "servers" {
+  count = 2 --> 1  # successed
+
+  name = "Server ${count.index + 1}"
+  type = "t2.micro"
+  vpc  = fakewebservices_vpc.primary_vpc.name
+}
+```
+
+
 ### Refernece
 
 * https://www.44bits.io/ko/post/terraform_introduction_infrastrucute_as_code

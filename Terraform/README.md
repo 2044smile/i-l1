@@ -4,3 +4,16 @@
 * IaC(코드형 인프라)는 버전 관리, 지속적 통합, 지속적 배포 등 Agile 및 DevOps 실무의 주요 구성요소입니다.
 * 코드로써의 인프라는 인프라를 이루는 서버, 미들웨어 그리고 서비스 등, 인프라 구성요소들을 코드를 통해 구축하는 것.
 * IaC는 코드로써의 장점, 즉 작성용이성, 재사용성, 유지보수 등의 장점을 가진다.
+
+## 기본 구성 요소
+
+* provider: 테라폼으로 생성할 인프라의 종류를 의미, access, secret_key
+* resource: 테라폼으로 실제로 생성할 인프라 자원을 의미, t2.micro, ami
+* state: 테라폼을 통해 생성한 자원의 상태를 의미
+* output: 테라폼으로 만든 자원을 변수 형태로 state 에 저장하는 것을 의미
+* module: 공통적으로 활용할 수 있는 코드를 문자 그대로 모듈 형태로 정의하는 것을 의미
+* remote: 다른 경로의 state 를 참조하는 것을 말한다. output 변수를 불러올 때 주로 사용
+
+### Refernece
+
+* https://www.44bits.io/ko/post/terraform_introduction_infrastrucute_as_code

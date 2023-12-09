@@ -17,6 +17,26 @@
 * module: 공통적으로 활용할 수 있는 코드를 문자 그대로 모듈 형태로 정의하는 것을 의미
 * remote: 다른 경로의 state 를 참조하는 것을 말한다. output 변수를 불러올 때 주로 사용
 
+## 명령어
+
+* init: 명령어 사용을 위해 각종 설정을 진행
+* plan: 작성한 코드가 실제로 어떻게 만들어질지에 대한 예측 결과를 보여준다.
+* apply: 코드로 실제 인프라를 생성하는 명령어
+* import: 이미 만들어진 자원을 테라폼 state 파일로 옮겨주는 명령어
+* state: 하위 명렁어로 mv, push
+* destroy: 생성된 자원들 state 파일 모두 삭제하는 명렁어
+
+## 프로세스
+
+1. init
+   1. 내부적으로 provider 와 state, module 설정
+2. plan
+   1. 예측 결과를 보여주는 명령어
+   2. 기본적으로 plan 에 문제가 없어야 apply 에 문제가 없을 확률이 높다
+3. apply
+   1. 실제로 작성한 코드로 인프라를 생성하는 명령어
+   2. 실제 인프라에 영향을 끼치는 명령어이므로 주의깊게 실행을 해야한다.
+
 ### Refernece
 
 * https://www.44bits.io/ko/post/terraform_introduction_infrastrucute_as_code

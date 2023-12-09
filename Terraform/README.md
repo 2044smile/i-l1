@@ -8,7 +8,10 @@
 ## 기본 구성 요소
 
 * provider: 테라폼으로 생성할 인프라의 종류를 의미, access, secret_key
+  * 테라폼과 외부 서비스를 연결해주는 기능을 하는 모듈
 * resource: 테라폼으로 실제로 생성할 인프라 자원을 의미, t2.micro, ami
+  * provider가 제공해주는 조작 가능한 대상의 최소 단위
+  * EX] AWS 가 제공해주는 EC2, Security_Group, Key ...
 * state: 테라폼을 통해 생성한 자원의 상태를 의미
 * output: 테라폼으로 만든 자원을 변수 형태로 state 에 저장하는 것을 의미
 * module: 공통적으로 활용할 수 있는 코드를 문자 그대로 모듈 형태로 정의하는 것을 의미

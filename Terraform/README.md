@@ -50,7 +50,7 @@
 ```markdown
 # main.tf
 resource "fakewebservices_server" "servers" {
-  count = 2 --> 1  # successed
+  count = 2 --> 1  # Successed
 
   name = "Server ${count.index + 1}"
   type = "t2.micro"
